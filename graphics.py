@@ -22,9 +22,7 @@ class Window:
 
     def start_main_loop(self, game_of_life, update_interval):
         def loop():
-
             game_of_life._check_neighbors()
-            game_of_life._draw_cells()
             self._root.after(update_interval, loop)
 
         loop()
