@@ -21,6 +21,7 @@ class Cell:
             self._y + self._size,
             fill=fill_color,
         )
+        print(self)
 
     def enviroment_check(self):
         # updates isAlive status of cell depending on neighbor conditions
@@ -34,7 +35,11 @@ class Cell:
             if self.neighbors == 3:
                 self.isAlive = True
 
+        self.draw()
         self.neighbors = 0
 
     def get_mx_location(self):
         return (self._i, self._j)
+
+    def __repr__(self) -> str:
+        return f"Cell at ({self._i}, {self._j}). IsAlive: {self.isAlive}"

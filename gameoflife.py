@@ -89,7 +89,6 @@ class GameOfLife:
             if cell.isAlive:
                 updated_living_cells.append(cell.get_mx_location())
             cell.enviroment_check()
-            cell.draw()
 
         self._living_cells = updated_living_cells
 
